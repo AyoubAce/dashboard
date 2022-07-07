@@ -145,24 +145,50 @@ body {
   @import "./partials.scss/table";
   @import "./partials.scss/sale-status";
 
-  @media screen and (min-width: 1022px) {
+
+  @media screen and (min-width: 768px){
     .app{
       display: flex;
      }
+     .topnav{
+      padding:2rem 4rem;
+      .sidebar-menu{
+        display: none
+      }
+    }
      .app-content{
       flex:1;
      }
-      .topnav{
-        padding:2rem 4rem;
-        .sidebar-menu{
-          display: none
-        }
+     .sidebar{
+      position: unset;
+      &-close{
+          display: none;
       }
+      &-link{
+          display: unset;
+          span{
+            display: none;
+          }}
+  }
+  }
+
+  @media screen and (min-width: 1022px) {
+   
+    
+    
+      .sidebar{
+        &-close{
+            display: none;
+        }
+        &-link{
+            display: unset;
+            span{
+              display: block;
+            }}
+    }
       section{
         padding:1rem 2rem;
       }
     }
     
-    .orders-page{
-      width:100%;
-    }
+ 

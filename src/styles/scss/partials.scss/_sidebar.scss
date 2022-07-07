@@ -39,20 +39,3 @@
         }
     }
 }
-@media screen and (min-width: 1024px) {
-
-    .sidebar{
-        position: unset;
-        max-width: 200px;
-        &-close{
-            display: none;
-        }
-        
-        .sidebar-link{
-            display: unset;
-            padding: 0;
-            span{
-              display: none;
-            }}
-    }
-}

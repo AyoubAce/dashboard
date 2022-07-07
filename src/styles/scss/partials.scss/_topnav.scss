@@ -6,9 +6,9 @@
   .logo-container{
     display: flex;
     align-items: center;
-    gap:2rem;
+    gap:1rem;
     h3{
-      padding:0.3rem 0.5rem;
+      padding:0 0.3rem;
       text-align: center;
 
       position: relative;
@@ -16,9 +16,9 @@
       &::before{
         content: "";
         position: absolute;
-        top:50%;
+        top:55%;
         left: 0;
-        height:50%;
+        height:40%;
         width: 100%;
         background-image:linear-gradient(to right, var(--primary-color), var(--secondary-color));
         z-index: -1;

@@ -163,22 +163,6 @@ body {
   color: var(--txt-white);
 }
 
-@media screen and (min-width: 1024px) {
-  .sidebar {
-    position: unset;
-    max-width: 200px;
-  }
-  .sidebar-close {
-    display: none;
-  }
-  .sidebar .sidebar-link {
-    display: unset;
-    padding: 0;
-  }
-  .sidebar .sidebar-link span {
-    display: none;
-  }
-}
 .topnav {
   padding: 2rem;
   display: flex;
@@ -188,10 +172,10 @@ body {
 .topnav .logo-container {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
 }
 .topnav .logo-container h3 {
-  padding: 0.3rem 0.5rem;
+  padding: 0 0.3rem;
   text-align: center;
   position: relative;
   z-index: 3;
@@ -199,9 +183,9 @@ body {
 .topnav .logo-container h3::before {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 0;
-  height: 50%;
+  height: 40%;
   width: 100%;
   background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
   z-index: -1;
@@ -556,13 +540,9 @@ tbody > tr:hover {
   margin-bottom: 1rem;
 }
 
-@media screen and (min-width: 1022px) {
+@media screen and (min-width: 768px) {
   .app {
     display: flex;
-  }
-
-  .app-content {
-    flex: 1;
   }
 
   .topnav {
@@ -572,10 +552,35 @@ tbody > tr:hover {
     display: none;
   }
 
+  .app-content {
+    flex: 1;
+  }
+
+  .sidebar {
+    position: unset;
+  }
+  .sidebar-close {
+    display: none;
+  }
+  .sidebar-link {
+    display: unset;
+  }
+  .sidebar-link span {
+    display: none;
+  }
+}
+@media screen and (min-width: 1022px) {
+  .sidebar-close {
+    display: none;
+  }
+  .sidebar-link {
+    display: unset;
+  }
+  .sidebar-link span {
+    display: block;
+  }
+
   section {
     padding: 1rem 2rem;
   }
-}
-.orders-page {
-  width: 100%;
 }/*# sourceMappingURL=index.css.map */

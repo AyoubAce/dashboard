@@ -1,0 +1,38 @@
+.theme-light{
+    --primary-bg: var(--primary-bg-light);
+    --secondary-bg: var(--secondary-bg-light);
+    --txt-color: var(--txt-color-light);
+    --box-shadow: var(--box-shadow-light);
+}
+.theme-dark{
+    --primary-bg: var(--primary-bg-dark);
+    --secondary-bg: var(--secondary-bg-dark);
+    --txt-color: var(--txt-color-dark);
+    --box-shadow: var(--box-shadow-dark);
+}
+.theme-orange{
+    --primary-bg: var(--primary-bg-orange);
+    --secondary-bg: var(--secondary-bg-orange);
+    --txt-color: var(--txt-color-orange);
+    --box-shadow: var(--box-shadow-orange);
+}
+.theme-color-purple{
+    --primary-color: var(--primary-purple);
+    --secondary-color: var(--secondary-purple);   
+}
+.theme-color-blue{
+    --primary-color: var(--primary-blue);
+    --secondary-color: var(--secondary-blue);   
+}
+.theme-color-green{
+    --primary-color: var(--primary-green);
+    --secondary-color: var(--secondary-green);   
+}
+.theme-color-red{
+    --primary-color: var(--primary-red);
+    --secondary-color: var(--secondary-red);   
+}
+.theme-color-orange{
+    --primary-color: var(--primary-orange);
+    --secondary-color: var(--secondary-orange);   
+}

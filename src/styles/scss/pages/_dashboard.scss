@@ -1,0 +1,87 @@
+.page-container {
+  margin-bottom: 2.5rem;
+  .status-container,
+  .table-container,
+  .chart-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+   .chart-container{
+      h3 {
+      display: inline;
+    }
+    .chart{
+        // width: 100%;
+    }
+   }
+   .badge{
+    display: block;
+    text-align: center;
+    padding: 0.3rem 0.5rem;
+    color:var(--txt-white);
+    border-radius: 6px;
+    box-shadow: var(--box-shadow);
+}
+.badge-danger{
+    background-color: var(--primary-red);
+}
+.badge-warning{
+    background-color: var(--primary-orange);
+}
+.badge-success{
+    background-color: var(--primary-green);
+}
+.badge-primary{
+    background-color: var(--primary-blue);
+}
+  
+}
+
+@media screen and (min-width: 600px) {
+  .page-container {
+    .status-container {
+      display: flex;
+      // align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      .status-card {
+        flex: 1;
+      }
+    }
+  }
+}
+@media screen and (min-width: 992px) {
+  .page-container {
+    display: grid;
+    column-gap: 2rem;
+    padding:1rem 2rem;
+    .status-container,.chart-container, .table-container{
+      width: 100%;
+    }
+    .status-container {
+      grid-column: 1/5;
+      grid-row: 1/2;
+    }
+    .donut-chart {
+     
+      grid-column: 5/12;
+      grid-row: 1/2;
+    }
+    .line-chart {
+      grid-column: 1/5;
+      grid-row: 2/3;
+ 
+    }
+
+    .last-orders { 
+      grid-column: 5/12;
+      grid-row: 2/6;
+    }
+    
+    .top-customers {
+        grid-column: 1/5;
+        grid-row: 3/6;
+    }
+  }
+}

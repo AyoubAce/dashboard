@@ -1,0 +1,32 @@
+.sidebar{
+    position: fixed;
+    height:100vh;
+    top:0;
+    left:-100%;
+    background-color: var(--primary-bg);
+    box-shadow: var(--box-shadow);
+    z-index: 55;
+    padding:7rem 1rem 0;
+    &-wrapper{
+
+    }
+    &-link{
+        display: block;
+        padding:0rem 1.5rem;
+        &-inner{
+            padding: 0.5rem 1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap:0.5rem;
+            font-weight: 500;
+            transition: color 300ms ease-out;
+
+        }
+        &-inner.active{
+            border-radius: var(--border-radius);
+            background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: var(--txt-white);
+        }
+    }
+}

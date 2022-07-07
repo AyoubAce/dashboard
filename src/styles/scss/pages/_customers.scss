@@ -1,0 +1,24 @@
+.pagination{
+    margin-top: 1rem;
+    padding-right: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    &-item ~ &-item{
+        margin-left: 0.6rem;
+    }
+    &-item{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    &-item.active , &-item.active:hover{
+        background-color: var(--primary-color);
+        color:var(--txt-white);
+        font-weight: 600;
+        }
+}

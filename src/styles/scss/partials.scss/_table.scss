@@ -1,0 +1,23 @@
+.table-wrapper {
+  overflow-x: auto;
+}
+table {
+  width: 100%;
+  min-width: 350px;
+  border-spacing: 0;
+}
+thead {
+  background-color: var(--secondary-bg);
+}
+th{
+  text-transform: capitalize;
+}
+th,
+td {
+  text-align: left;
+  padding: 1rem 0.4rem;
+}
+tbody > tr:hover {
+  background-color: var(--primary-color);
+  color: var(--txt-white);
+}

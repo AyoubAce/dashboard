@@ -1,11 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SideBar from "./compoonents/Sidebar";
-import Topnav from "./compoonents/Topnav";
+import Topnav from "./compoonents/topnav/Topnav";
 import Customers from "./pages/Customers";
 import Dashboard from "./pages/Dashboard";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { setColor,setMode } from "./compoonents/thememenu/themeSlice";
+import Orders from "./pages/Orders";
 
 function App() {
 
@@ -36,6 +37,7 @@ dispatch(setMode(themeMode))
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/customers" element={<Customers />} />
+            <Route path="/orders" element={<Orders />} />
           </Routes>
         </div>
       </div>

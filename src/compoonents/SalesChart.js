@@ -81,7 +81,6 @@ const SalesChart = () => {
       item[keys[4]]?.value.reduce((p, n) => p + n),
     ].reverse()
   }
-  const keys = Object.keys(product1);
 
   const chartOptions= {
     series:[

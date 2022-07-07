@@ -1,34 +1,30 @@
 :root {
-  --primary-bg:#fcf6f6;
-  --secondary-bg:#eee;
-  --txt-color:#191919;
+  --primary-bg: #fff;
+  --secondary-bg:#fafafb;
+  --txt-color:#455560;
   --txt-white:#fff;
   --border-radius: 10px;
   --box-shadow: -1px 1px 10px -1px #95afa533;
-  --primary-color: #333;
-  --secondary-color:#3e3e3e;
-  --primary-bg-light:#fcf6f6;
-  --secondary-bg-light:#f1f1f1;
-  --txt-color-light:#191919;
+  --primary-color: #349eff;
+  --secondary-color:#62b4ff;
+  --primary-bg-light:#fff;
+  --secondary-bg-light:#fafafb;
+  --txt-color-light:#455560;
   --box-shadow-light: -2px 2px 10px -1px #95afa533;
-  --primary-bg-dark:#191919;
-  --secondary-bg-dark:#121212;
-  --txt-color-dark:#fdf9f9;
-  --box-shadow-dark: -1px 1px 5px -1px #95afa533;
-  --primary-bg-orange: rgb(218, 136, 15);
-  --secondary-bg-orange:rgba(255, 170, 11, 0.904);
-  --txt-color-orange:#000000;
-  --box-shadow-orange: -1px 1px 5px -1px #95afa533;
+  --primary-bg-dark:#2d2d2d;
+  --secondary-bg-dark:#202020;
+  --txt-color-dark:rgb(236, 235, 235);
+  --box-shadow-dark: 0 3px 20px rgba(0, 0, 0, 0.2);
   --primary-purple: #79018C;
   --secondary-purple:#9A0680;
   --primary-green: #019267;
   --secondary-green:#00C897;
-  --primary-red: #D72323;
-  --secondary-red:#CA3E47;
-  --primary-orange: #FF5733;
-  --secondary-orange: #fa8072;
-  --primary-blue:#22577E;
-  --secondary-blue:#5584AC;
+  --primary-red: rgb(245, 37, 37);
+  --secondary-red:rgb(248, 74, 74);
+  --primary-orange: orange;
+  --secondary-orange: rgb(253, 194, 85);
+  --primary-blue:#349eff;
+  --secondary-blue:#62b4ff;
   --primary-dark:#333;
   --secondary-dark: #3e3e3e;
 }
@@ -59,7 +55,6 @@ li {
 }
 
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -74,7 +69,7 @@ body {
 }
 
 .page-header {
-  margin: 1rem 0 2.5rem;
+  margin: 1rem 0 2rem;
   padding: 0 2rem;
 }
 
@@ -132,13 +127,22 @@ body {
 
 .sidebar {
   position: fixed;
-  height: 100vh;
+  min-height: 100vh;
   top: 0;
   left: -100%;
   background-color: var(--primary-bg);
   box-shadow: var(--box-shadow);
-  z-index: 55;
+  z-index: 100;
   padding: 7rem 1rem 0;
+  transition: left 550ms ease-out;
+}
+.sidebar.active {
+  left: 0;
+}
+.sidebar-close {
+  position: absolute;
+  top: 2rem;
+  left: 1rem;
 }
 .sidebar-link {
   display: block;
@@ -159,18 +163,55 @@ body {
   color: var(--txt-white);
 }
 
+@media screen and (min-width: 1024px) {
+  .sidebar {
+    position: unset;
+    max-width: 200px;
+  }
+  .sidebar-close {
+    display: none;
+  }
+  .sidebar .sidebar-link {
+    display: unset;
+    padding: 0;
+  }
+  .sidebar .sidebar-link span {
+    display: none;
+  }
+}
 .topnav {
   padding: 2rem;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+}
+.topnav .logo-container {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.topnav .logo-container h3 {
+  padding: 0.3rem 0.5rem;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+.topnav .logo-container h3::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 50%;
+  width: 100%;
+  background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  z-index: -1;
+  border-radius: 0 0 50% 50%;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 1rem;
 }
 .nav > div ~ div {
   margin-left: 2rem;
@@ -286,7 +327,7 @@ body {
 }
 
 .page-container {
-  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 .page-container .status-container,
 .page-container .table-container,
@@ -513,4 +554,28 @@ tbody > tr:hover {
 }
 .status-wrapper .status h4 {
   margin-bottom: 1rem;
+}
+
+@media screen and (min-width: 1022px) {
+  .app {
+    display: flex;
+  }
+
+  .app-content {
+    flex: 1;
+  }
+
+  .topnav {
+    padding: 2rem 4rem;
+  }
+  .topnav .sidebar-menu {
+    display: none;
+  }
+
+  section {
+    padding: 1rem 2rem;
+  }
+}
+.orders-page {
+  width: 100%;
 }/*# sourceMappingURL=index.css.map */

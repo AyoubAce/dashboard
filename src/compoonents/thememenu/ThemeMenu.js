@@ -16,12 +16,7 @@ const modeSetting = [
     background: "dark-background",
     class: "theme-dark",
   },
-  {
-    id: "orange",
-    name: "Orange",
-    background: "orange-background",
-    class: "theme-orange",
-  },
+  
 ];
 const colorSetting = [
     {

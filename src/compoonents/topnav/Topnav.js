@@ -7,10 +7,14 @@ import {
   IoSettingsOutline,
   IoLogOutOutline,
 } from "react-icons/io5";
-import Dropdown from "./Dropdown";
-import userImg from "../data/images/profile.jpg";
+import {IoIosMenu} from "react-icons/io";
+
+import Dropdown from "../Dropdown";
+import userImg from "../../data/images/profile.jpg";
 import { Link } from "react-router-dom";
-import ThemeMenu from "./thememenu/ThemeMenu";
+import ThemeMenu from "../thememenu/ThemeMenu";
+import { useSelector, useDispatch } from "react-redux/es/exports";
+import { toggleSidebar } from "./topnavSlice";
 const userMenus=[
     {
         "icon": <IoPerson/>,
@@ -42,35 +46,43 @@ const notifications=[
         "content": "em ipsum is a placeholder text commonly used to demonstrate"
     }
 ]
+const renderNotifications = (item, index) => {
+  return (
+    <div className="notification-item" key={index}>
+      <span>- {item.content}</span>
+    </div>
+  );
+};
+const renderUser = (img) => {
+  return (
+    <div className="user-image">
+      <img src={img} alt="user" />
+    </div>
+  );
+};
+const renderUserMenu = (item, index) => {
+return  <Link to="/" key={index}>
+    <div className="notification-item">
+      <span>
+        {item.icon} {item.content}
+      </span>
+    </div>
+  </Link>;
+};
 
 const Topnav = () => {
-  const renderNotifications = (item, index) => {
-    return (
-      <div className="notification-item" key={index}>
-        <span>- {item.content}</span>
-      </div>
-    );
-  };
- 
-  const renderUser = (img) => {
-    return (
-      <div className="user-image">
-        <img src={img} alt="user" />
-      </div>
-    );
-  };
-  const renderUserMenu = (item, index) => {
-  return  <Link to="/" key={index}>
-      <div className="notification-item">
-        <span>
-          {item.icon} {item.content}
-        </span>
-      </div>
-    </Link>;
-  };
+
+const sidebar= useSelector(state=>state.side.toggle)
+const dispatch= useDispatch()
+console.log("sidebar", sidebar);
+
 
   return (
     <div className="topnav">
+    <div className="logo-container">
+    <IoIosMenu size={25} className="sidebar-menu"  onClick={()=>dispatch(toggleSidebar(true))}/>
+    <h3>ASco</h3>
+    </div>
       <div className="nav">
         <div>
           <Dropdown
@@ -81,7 +93,7 @@ const Topnav = () => {
         </div>
         <div>
           <Dropdown
-            icon={<IoNotificationsOutline size={20} className="icon" />}
+            icon={<IoNotificationsOutline size={25} className="icon" />}
             badge="12"
             contentData={notifications}
             renderItems={(item, index) => renderNotifications(item, index)}

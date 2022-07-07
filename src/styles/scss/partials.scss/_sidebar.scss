@@ -1,12 +1,21 @@
 .sidebar{
     position: fixed;
-    height:100vh;
+    min-height:100vh;
     top:0;
     left:-100%;
     background-color: var(--primary-bg);
     box-shadow: var(--box-shadow);
-    z-index: 55;
+    z-index: 100;
     padding:7rem 1rem 0;
+    transition: left 550ms ease-out;
+    &.active{
+        left: 0;
+    }
+    &-close{
+        position: absolute;
+        top:2rem;
+        left:1rem;
+    }
     &-wrapper{
 
     }
@@ -28,5 +37,22 @@
             background-image: linear-gradient(to right, var(--primary-color), var(--secondary-color));
             color: var(--txt-white);
         }
+    }
+}
+@media screen and (min-width: 1024px) {
+
+    .sidebar{
+        position: unset;
+        max-width: 200px;
+        &-close{
+            display: none;
+        }
+        
+        .sidebar-link{
+            display: unset;
+            padding: 0;
+            span{
+              display: none;
+            }}
     }
 }

@@ -2,13 +2,35 @@
   padding: 2rem;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
+  .logo-container{
+    display: flex;
+    align-items: center;
+    gap:2rem;
+    h3{
+      padding:0.3rem 0.5rem;
+      text-align: center;
+
+      position: relative;
+      z-index: 3;
+      &::before{
+        content: "";
+        position: absolute;
+        top:50%;
+        left: 0;
+        height:50%;
+        width: 100%;
+        background-image:linear-gradient(to right, var(--primary-color), var(--secondary-color));
+        z-index: -1;
+        border-radius: 0 0 50% 50%;
+      }
+    }
+  }
 }
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-right: 1rem;
   & > div ~ div {
     margin-left: 2rem;
   }
@@ -67,5 +89,8 @@
         transform: scale(1);
     }
   }
+
+}
+@media screen and (min-width: 992px) {
 
 }

@@ -71,7 +71,7 @@ const ThemeMenu = ({ icon }) => {
 
   
 
-  const [currentMode, setCurrentMode]=useState("light");
+  const [currentMode, setCurrentMode]=useState("dark");
   const [currentColor, setCurrentColor]= useState("purple");
   const setThemeMode= mode=>{
     setCurrentMode(mode.id)

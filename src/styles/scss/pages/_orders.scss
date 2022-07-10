@@ -1,0 +1,23 @@
+.page-container{
+
+.curr-month-orders{
+    border-bottom: 1px solid blue;
+    z-index: 22;
+    td:first-of-type{
+        border-left:2px solid rgb(1, 110, 56);
+        position: relative;
+        overflow: hidden;
+    }
+    }
+    .curr-month{
+        position: absolute;
+        top:-0.5rem;
+        left:-1rem;
+        width: 100%;
+        font-size: 0.7rem;
+        transform: rotate(-20deg);
+        padding:0.3rem 0rem 0.3rem 1rem;    
+        background-color: rgb(1, 110, 56);
+        color:white;
+    }
+}

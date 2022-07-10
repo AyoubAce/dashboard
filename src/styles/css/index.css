@@ -322,7 +322,7 @@ body {
 .page-container .chart-container h3 {
   display: inline;
 }
-.page-container .badge {
+.badge {
   display: block;
   text-align: center;
   padding: 0.3rem 0.5rem;
@@ -330,16 +330,20 @@ body {
   border-radius: 6px;
   box-shadow: var(--box-shadow);
 }
-.page-container .badge-danger {
+
+.badge-danger {
   background-color: var(--primary-red);
 }
-.page-container .badge-warning {
+
+.badge-warning {
   background-color: var(--primary-orange);
 }
-.page-container .badge-success {
+
+.badge-success {
   background-color: var(--primary-green);
 }
-.page-container .badge-primary {
+
+.badge-primary {
   background-color: var(--primary-blue);
 }
 
@@ -538,6 +542,27 @@ tbody > tr:hover {
 }
 .status-wrapper .status h4 {
   margin-bottom: 1rem;
+}
+
+.page-container .curr-month-orders {
+  border-bottom: 1px solid blue;
+  z-index: 22;
+}
+.page-container .curr-month-orders td:first-of-type {
+  border-left: 2px solid rgb(1, 110, 56);
+  position: relative;
+  overflow: hidden;
+}
+.page-container .curr-month {
+  position: absolute;
+  top: -0.5rem;
+  left: -1rem;
+  width: 100%;
+  font-size: 0.7rem;
+  transform: rotate(-20deg);
+  padding: 0.3rem 0rem 0.3rem 1rem;
+  background-color: rgb(1, 110, 56);
+  color: white;
 }
 
 @media screen and (min-width: 768px) {

@@ -26,7 +26,7 @@ dispatch(setMode(themeMode))
     dispatch(setColor(themeColor))
   }
  },[dispatch])
- console.log("hey",mode, color);
+
 
   return (
     <BrowserRouter>

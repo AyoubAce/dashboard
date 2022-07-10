@@ -15,27 +15,28 @@
         // width: 100%;
     }
    }
-   .badge{
-    display: block;
-    text-align: center;
-    padding: 0.3rem 0.5rem;
-    color:var(--txt-white);
-    border-radius: 6px;
-    box-shadow: var(--box-shadow);
+
+  
+}
+.badge{
+  display: block;
+  text-align: center;
+  padding: 0.3rem 0.5rem;
+  color:var(--txt-white);
+  border-radius: 6px;
+  box-shadow: var(--box-shadow);
 }
 .badge-danger{
-    background-color: var(--primary-red);
+  background-color: var(--primary-red);
 }
 .badge-warning{
-    background-color: var(--primary-orange);
+  background-color: var(--primary-orange);
 }
 .badge-success{
-    background-color: var(--primary-green);
+  background-color: var(--primary-green);
 }
 .badge-primary{
-    background-color: var(--primary-blue);
-}
-  
+  background-color: var(--primary-blue);
 }
 
 @media screen and (min-width: 600px) {

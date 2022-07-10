@@ -8,7 +8,6 @@ const Dropdown = ({icon,badge, user, renderItems, contentData}) => {
             // click toggle
         if(buttonRef.current && buttonRef.current.contains(e.target)){
             contentRef.current.classList.toggle("active")
-            console.log("clicked");
         }
         else if(contentRef.current && !contentRef.current.contains(e.target)){
                 contentRef.current.classList.remove("active")

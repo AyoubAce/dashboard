@@ -18,11 +18,19 @@ const orders= alteredOrders.map(item=>{
     product: products.find(i=>item.items.productId === i._id)
   }
 })
-//monthly sales
-const monthOrders= orders.filter(item=>{
-    const date= new Date(item.registered)
-    return date.getMonth() === new Date().getMonth()
-  })
 
-export {monthOrders}
+//sorted orders
+const sortedOrders=orders
+    .sort((a, b) => {
+      return new Date(b.registered) - new Date(a.registered);
+    });
+
+// current month sales
+const currMonthOrders=sortedOrders.filter(item=>{
+  const date= new Date(item.registered)
+  return date.getMonth() === new Date().getMonth()
+})
+  
+
+export {sortedOrders, currMonthOrders}
 export default orders;

@@ -13,7 +13,7 @@ import Dropdown from "../Dropdown";
 import userImg from "../../data/images/profile.jpg";
 import { Link } from "react-router-dom";
 import ThemeMenu from "../thememenu/ThemeMenu";
-import { useSelector, useDispatch } from "react-redux/es/exports";
+import { useDispatch } from "react-redux/es/exports";
 import { toggleSidebar } from "./topnavSlice";
 const userMenus=[
     {
@@ -72,12 +72,9 @@ return  <Link to="/" key={index}>
 
 const Topnav = () => {
 
-const sidebar= useSelector(state=>state.side.toggle)
 const dispatch= useDispatch()
-console.log("sidebar", sidebar);
 
-
-  return (
+return (
     <div className="topnav">
     <div className="logo-container">
     <IoIosMenu size={25} className="sidebar-menu"  onClick={()=>dispatch(toggleSidebar(true))}/>

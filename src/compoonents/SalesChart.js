@@ -63,16 +63,18 @@ const SalesChart = () => {
   const [product1, setProduct1] = useState([]);
   const [product2, setProduct2] = useState([]);
   const [product3, setProduct3] = useState([]);
-
+  
   useEffect(() => {
-    setProduct1(()=>chartData("62c2b8e587543c7b52a2b3f5").reverse())
-    setProduct2(()=>chartData("62c2b8e5df9b02990166c29a").reverse())
-    setProduct3(()=>chartData("62c2b8e514cb3a53d84d52e8").reverse())
-    
+    setProduct1(()=>chartData("62c2b8e587543c7b52a2b3f5"))
+    setProduct2(()=>chartData("62c2b8e5df9b02990166c29a"))
+    setProduct3(()=>chartData("62c2b8e514cb3a53d84d52e8"))
+     
   }, []);
-
   const seriesData=(item)=>{
   const keys = Object.keys(product1);
+  item.map((item,index)=>{
+    return item.value.reduce((p,n)=>p+n)
+  })
     return [
       item[keys[0]]?.value.reduce((p, n) => p + n),
       item[keys[1]]?.value.reduce((p, n) => p + n),
@@ -81,24 +83,27 @@ const SalesChart = () => {
       item[keys[4]]?.value.reduce((p, n) => p + n),
     ].reverse()
   }
-
+ 
+  const data1=seriesData(product1),
+  data2= seriesData(product2),
+  data3= seriesData(product3)
   const chartOptions= {
     series:[
     {
       name:"Notebook set",
-      data:seriesData(product1)
+      data:data1
     },
     {
       name:'Mobile phone',
-      data:seriesData(product2)
+      data:data2
     },
     {
       name:'Tablet',
-      data:seriesData(product3)
+      data:data3
     }
   ],
   options:{
-    colors: ["#22577E", "#3e3e3e", "#019267"],
+    colors: ["#22577E", "#4e4e4e", "#019267"],
     chart:{
       background:"transparent"
     },
@@ -116,9 +121,9 @@ const SalesChart = () => {
     },
   } 
   };
-  console.log(chartOptions.series[0].data);
 
-  return <Chart  options={mode=== "theme-light" ?{...chartOptions.options,theme:{mode:"light"}}: {...chartOptions.options, theme:{mode:"dark"}}} series={chartOptions.series} type='line' height='100%' />;
+
+  return <><Chart  type="line" options={mode=== "theme-light" ?{...chartOptions.options,theme:{mode:"light"}}: {...chartOptions.options, theme:{mode:"dark"}}} series={chartOptions.series} height='100%' /></>;
 };
 
 export default SalesChart;

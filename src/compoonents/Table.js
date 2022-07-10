@@ -10,9 +10,6 @@ const Table = ({ headData, renderHead, bodyData, renderBody, limit }) => {
     let page = Math.floor(bodyData.length / limit);
     pages = bodyData.length % limit === 0 ? page : page + 1;
     range = [...Array(pages).keys()];
-    console.log("page", page);
-    console.log("pages:", pages);
-    console.log("range", range);
   }
   const handlePagination=(index)=>{
     setCurrentPage(index+1);

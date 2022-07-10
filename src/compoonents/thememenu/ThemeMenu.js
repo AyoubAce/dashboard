@@ -67,10 +67,7 @@ const ThemeMenu = ({ icon }) => {
   const closeTheme = () => {
     contentRef.current.classList.remove("active");
   };
-
-
   
-
   const [currentMode, setCurrentMode]=useState("dark");
   const [currentColor, setCurrentColor]= useState("purple");
   const setThemeMode= mode=>{
@@ -92,8 +89,7 @@ const ThemeMenu = ({ icon }) => {
     }
     const modeClass= modeSetting.find(e=>e.class=== themeModeStorage)
     const colorClass= colorSetting.find(e=>e.class=== themeColorStorage)
-    console.log(modeClass);
-    console.log(colorClass);
+
     if(modeClass) setCurrentMode(modeClass.id)
     if(colorClass) setCurrentColor(colorClass.id)
   },[])

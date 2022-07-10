@@ -1,22 +1,15 @@
-import { monthOrders } from "../data/mainData";
-import orders from "../data/mainData";
 import SaleStatus from "../compoonents/SaleStatus";
 import customer_list from "../data/customers";
 import Table from "../compoonents/Table";
 import Stock from "../compoonents/Stock";
 import SalesChart from "../compoonents/SalesChart";
 import Badge from "../compoonents/Badge";
+import orders,{sortedOrders,currMonthOrders} from "../data/mainData";
 
 
-
-//sort orders list according to Date and get the last 10 orders
 const latestOrders = {
   head: ["status", "customer", "total price", "date"],
-  body: orders
-    .sort((a, b) => {
-      return new Date(b.registered) - new Date(a.registered);
-    })
-    .slice(0, 10),
+  body:sortedOrders.slice(0, 10),
 };
 
 //render orders table head
@@ -81,7 +74,7 @@ const Dashboard = () => {
       <h1 className="page-header">Dashboard</h1>
       <div className="page-container">
         <div className="status-container">
-          <SaleStatus month={"Month Orders: "} data={monthOrders} />
+          <SaleStatus month={"Month Orders: "} data={currMonthOrders} />
           <SaleStatus total={"Total Sales: "} data={orders} />
           {/* <input type="color" value={color} name="color" onChange={(e)=>setColor(e.target.value)}/> */}
         </div>

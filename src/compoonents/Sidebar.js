@@ -9,7 +9,7 @@ import { IoIosClose} from "react-icons/io";
 
 const items = [
   {
-    name: "Dashboard",
+    name: "Home",
     route: "/",
     icon: <MdDashboard size={20} />,
   },

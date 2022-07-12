@@ -1,16 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import SideBar from "./compoonents/Sidebar";
-import Topnav from "./compoonents/topnav/Topnav";
+import SideBar from "./components/Sidebar";
+import Topnav from "./components/Topnav";
 import Customers from "./pages/Customers";
 import Dashboard from "./pages/Dashboard";
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
-import { setColor,setMode } from "./compoonents/thememenu/themeSlice";
+import { setColor,setMode } from "./store/features/themeSlice";
 import Orders from "./pages/Orders";
 
 function App() {
-
-
   // get specific month data
  const mode= useSelector(state=>state.theme.mode)
  const color= useSelector(state=>state.theme.color)

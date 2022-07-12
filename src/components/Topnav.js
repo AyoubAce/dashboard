@@ -9,12 +9,12 @@ import {
 } from "react-icons/io5";
 import {IoIosMenu} from "react-icons/io";
 
-import Dropdown from "../Dropdown";
-import userImg from "../../data/images/profile.jpg";
+import Dropdown from "./Dropdown";
+import userImg from "../data/images/profile.jpg";
 import { Link } from "react-router-dom";
-import ThemeMenu from "../thememenu/ThemeMenu";
+import ThemeMenu from "./ThemeMenu";
 import { useDispatch } from "react-redux/es/exports";
-import { toggleSidebar } from "./topnavSlice";
+import { toggleSidebar } from "../store/features/topnavSlice";
 const userMenus=[
     {
         "icon": <IoPerson/>,

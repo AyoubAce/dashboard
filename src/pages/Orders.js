@@ -1,7 +1,7 @@
 import React from "react";
-import Badge from "../compoonents/Badge";
-import FormModal from "../compoonents/FormModal";
-import Table from "../compoonents/Table";
+import Badge from "../components/Badge";
+import FormModal from "../components/FormModal";
+import Table from "../components/Table";
 import orders from "../data/mainData";
 import {IoIosAdd} from "react-icons/io"
 
@@ -51,6 +51,7 @@ const Orders = () => {
       </div>
       <div className="card">
         <Table
+          limit={10}
           headData={ordersHead}
           renderHead={renderOrdersHead}
           bodyData={orders}

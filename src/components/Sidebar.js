@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { MdDashboard, MdShoppingCart } from "react-icons/md";
 import { IoIosPeople } from "react-icons/io";
 import { useSelector, useDispatch } from "react-redux/es/exports";
-import { toggleSidebar } from "./topnav/topnavSlice";
+import { toggleSidebar } from "../store/features/topnavSlice";
 import { IoIosClose} from "react-icons/io";
 
 

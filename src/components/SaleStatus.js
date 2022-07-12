@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+
 
 const SaleStatus = ({ month, total, data }) => {
   const formatter = new Intl.NumberFormat("en-US", {
@@ -32,8 +32,8 @@ const SaleStatus = ({ month, total, data }) => {
     .reduce((prevValue, currValue) => Number(prevValue) + Number(currValue));
 
   return (
-    <Link to="/orders">
-      <div className="status-card card">
+
+    <div className="status-card card">
         <div className="status-wrapper">
           <div className="status">
             <h4>{formatter.format(sum)}</h4>
@@ -52,7 +52,7 @@ const SaleStatus = ({ month, total, data }) => {
         </div>
         <span className="status-read-more">details</span>
       </div>
-    </Link>
+   
   );
 };
 

@@ -1,15 +1,16 @@
-import SaleStatus from "../compoonents/SaleStatus";
+import SaleStatus from "../components/SaleStatus";
 import customer_list from "../data/customers";
-import Table from "../compoonents/Table";
-import Stock from "../compoonents/Stock";
-import SalesChart from "../compoonents/SalesChart";
-import Badge from "../compoonents/Badge";
-import orders,{sortedOrders,currMonthOrders} from "../data/mainData";
+import Table from "../components/Table";
+import Stock from "../components/Stock";
+import SalesChart from "../components/SalesChart";
+import Badge from "../components/Badge";
+import orders,{currMonthOrders} from "../data/mainData";
+import { useSelector } from "react-redux";
 
 
 const latestOrders = {
   head: ["status", "customer", "total price", "date"],
-  body:sortedOrders.slice(0, 10),
+  body:orders.slice(0, 10),
 };
 
 //render orders table head
@@ -69,13 +70,15 @@ const formatter = new Intl.NumberFormat("en-US", {
 });
 
 const Dashboard = () => {
+
+  const ordersData=useSelector(state=>state.data.orders)
   return (
     <section>
       <h1 className="page-header">Dashboard</h1>
       <div className="page-container">
         <div className="status-container">
           <SaleStatus month={"Month Orders: "} data={currMonthOrders} />
-          <SaleStatus total={"Total Sales: "} data={orders} />
+          <SaleStatus total={"Total Sales: "} data={ordersData} />
           {/* <input type="color" value={color} name="color" onChange={(e)=>setColor(e.target.value)}/> */}
         </div>
 

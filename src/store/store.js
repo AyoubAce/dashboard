@@ -1,10 +1,12 @@
 import {configureStore} from "@reduxjs/toolkit"
-import themeReducer from "../compoonents/thememenu/themeSlice"
-import sideReducer from "../compoonents/topnav/topnavSlice"
+import themeReducer from "./features/themeSlice"
+import sideReducer from "./features/topnavSlice"
+import dataReducer from "./features/dataSlice"
 
 export const store= configureStore({
     reducer:{
         theme:themeReducer,
-        side: sideReducer
+        side: sideReducer,
+        data: dataReducer,
     }
 })

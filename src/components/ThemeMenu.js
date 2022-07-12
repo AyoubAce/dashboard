@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { IoIosClose, IoIosCheckmark } from "react-icons/io";
 import {useDispatch} from "react-redux"
-import { setColor, setMode } from "./themeSlice";
+import { setColor, setMode } from "../store/features/themeSlice";
 
 const modeSetting = [
   {

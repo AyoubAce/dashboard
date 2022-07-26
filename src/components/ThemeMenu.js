@@ -56,12 +56,14 @@ const ThemeMenu = ({ icon }) => {
   const contentRef = useRef(null);
   const dispatch= useDispatch()
 
-  document.addEventListener("click", (e) => {
+  document.addEventListener("mousedown", (e) => {
     // click toggle
     if (buttonRef.current && buttonRef.current.contains(e.target)) {
       contentRef.current.classList.toggle("active");
-    } else if (contentRef.current && !contentRef.current.contains(e.target)) {
+    } else{
+      if (contentRef.current && !contentRef.current.contains(e.target)) {
       contentRef.current.classList.remove("active");
+      }
     }
   });
   const activeTheme=()=>{

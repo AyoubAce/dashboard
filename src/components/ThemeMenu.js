@@ -64,6 +64,9 @@ const ThemeMenu = ({ icon }) => {
       contentRef.current.classList.remove("active");
     }
   });
+  const activeTheme=()=>{
+    contentRef.current.classList.add("active");
+  }
   const closeTheme = () => {
     contentRef.current.classList.remove("active");
   };
@@ -95,7 +98,7 @@ const ThemeMenu = ({ icon }) => {
   },[])
   return (
     <div>
-      <button ref={buttonRef} className="dropdown-btn">
+      <button ref={buttonRef} className="dropdown-btn" onClick={()=>activeMenu()}>
         {icon && icon}
       </button>
       <div ref={contentRef} className="theme-mode ">

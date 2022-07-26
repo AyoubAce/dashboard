@@ -103,7 +103,7 @@ const ThemeMenu = ({ icon }) => {
       </button>
       <div ref={contentRef} className="theme-mode ">
         <h4>Theme Settings</h4>
-        <IoIosClose size={20} className="theme-close" onClick={closeTheme} />
+        <IoIosClose size={20} className="theme-close" onClick={()=>{closeTheme()}} />
         <div className="theme-select">
           <span>Choose mode</span>
           <ul className="theme-list">

@@ -98,7 +98,7 @@ const ThemeMenu = ({ icon }) => {
   },[])
   return (
     <div>
-      <button ref={buttonRef} className="dropdown-btn" onClick={()=>activeMenu()}>
+      <button ref={buttonRef} className="dropdown-btn" onClick={()=>activeTheme()}>
         {icon && icon}
       </button>
       <div ref={contentRef} className="theme-mode ">

@@ -50,7 +50,7 @@ const SaleStatus = ({ month, total, data }) => {
             </span>
           </div>
         </div>
-        <span className="status-read-more">details</span>
+        
       </div>
    
   );

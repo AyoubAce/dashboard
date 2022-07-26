@@ -2,7 +2,7 @@ import React from "react";
 import Badge from "../components/Badge";
 import Table from "../components/Table";
 import orders from "../data/mainData";
-import {IoIosAdd} from "react-icons/io"
+
 
 const orderStatus = {
   shipping: "primary",

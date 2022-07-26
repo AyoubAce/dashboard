@@ -1,6 +1,5 @@
 import React from "react";
 import Badge from "../components/Badge";
-import FormModal from "../components/FormModal";
 import Table from "../components/Table";
 import orders from "../data/mainData";
 import {IoIosAdd} from "react-icons/io"
@@ -45,10 +44,7 @@ const Orders = () => {
   return (
     <section className="page-container">
       <h2 className="page-header">Orders</h2>
-      <div className="add-order-modal"> 
-      add new order modal 
-      <FormModal btnName={<><IoIosAdd/><span>new order</span></>}/>
-      </div>
+    
       <div className="card">
         <Table
           limit={10}

@@ -9,9 +9,10 @@ const Dropdown = ({icon,badge, user, renderItems, contentData}) => {
         if(buttonRef.current && buttonRef.current.contains(e.target)){
             contentRef.current.classList.toggle("active")
         }
-        else if(contentRef.current && !contentRef.current.contains(e.target)){
+        else {
+          if(contentRef.current && !contentRef.current.contains(e.target)){
                 contentRef.current.classList.remove("active")
-            
+          }   
         }
     })
 
